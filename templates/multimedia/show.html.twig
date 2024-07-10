@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Multimedia{% endblock %}
+
+{% block body %}
+    <h1>Multimedia</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ multimedia.id }}</td>
+            </tr>
+            <tr>
+                <th>Url</th>
+                <td>{{ multimedia.url }}</td>
+            </tr>
+            <tr>
+                <th>Type</th>
+                <td>{{ multimedia.type }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_multimedia_index') }}">back to list</a>
+
+    <a href="{{ path('app_multimedia_edit', {'id': multimedia.id}) }}">edit</a>
+
+    {{ include('multimedia/_delete_form.html.twig') }}
+{% endblock %}
